@@ -67,7 +67,28 @@ jobs:
           hackaton restart app --PROD
           echo "🚀 Despliegue completado en desarrollo y producción"
 ```
+### 👹 ¿Qué hace que este pipeline sea un desastre?
+Código repetido hasta el infinito y más allá.
+CI y CD mezclados en una misma ejecución, sin control ni orden.
+Despliegues automáticos sin ningún tipo de control o autorización.
+Dependencia total de valores hardcodeados (adiós variables externas).
+Scripts de Bash embebidos sin modularización ni reutilización.
+Sin secretos ni gestión segura de credenciales (¡ups!).
+Pruebas escritas a fuego sin posibilidad de parametrización.
 
+### 🚀 Tu misión
+🔎 Analiza el pipeline y detecta sus fallos.
+🔨Refactorízala o crea las que consideres necesarias, aplicando buenas prácticas de CI/CD.
+🔬Explica qué mejoras has implementado y por qué. Además, ¿Instalarías alguna herramienta adicional que consideres critica?
+ 
+### 🏆 Criterios de éxito
+Sigue las buenas prácticas de Clean CI/CD.
+Crea cuantas ramas consideres necesarias en el repo.
+Sugiere la instalación de aquellas herramientas que consideres criticas para la plataforma de CI/CD.
+Debate en el próximo hackaton tus propuestas para llegar a un acuerdo.
+
+📌 Tip: Piensa en la escalabilidad, la seguridad y la mantenibilidad.
+¿Listos para demostrar vuestras habilidades y salvar este pipeline del desastre? 🔧💡
 
 ## 🚀 Mejoras Implementadas en esta solución propuesta
 
