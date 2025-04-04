@@ -25,16 +25,19 @@ jobs:
     steps:
       - name: Checkout código        
         uses: actions/checkout@v3
+
       - name: A Produccion
         run: |
           echo "Instalando hackaton cli y dependencias"
           sudo apt update          
           sudo apt install -y hackaton          
           hackaton install  
+
           echo "Declarar variables"
           export DB_USER_DEV="admin"
           export DB_PASS_DEV="supersecreto"
           export API_KEY_DEV="123456789"
+
           echo "Aplicando configuraciones necesarias"
           sudo apt-get update -y
           sudo apt-get install -y nginx
@@ -52,20 +55,27 @@ jobs:
           sudo chmod -R 755 /var/www/app
           sudo chown -R www-data:www-data /var/www/app
           sudo systemctl restart nginx
+
           echo "Construyendo aplicación..."
           hackaton run build
+
           echo "Probando aplicación"
           hackaton test
+
           echo "Desplegando aplicación en DEV..."
           hackaton deploy --DEV
           hackaton restart app --DEV
+
           export DB_USER_PROD="admin"
           export DB_PASS_PROD="supersecreto"
           export API_KEY_PROD="123456789"
+
           echo "Desplegando aplicación en PROD..."
           hackaton deploy --PROD
           hackaton restart app --PROD
+
           echo "🚀 Despliegue completado en desarrollo y producción"
+ 
 ```
 ### 👹 ¿Qué hace que este pipeline sea un desastre?
 Código repetido hasta el infinito y más allá.
